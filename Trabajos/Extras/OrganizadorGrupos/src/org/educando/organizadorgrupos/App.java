@@ -67,28 +67,29 @@ public class App {
         }
 
         float sessions = setPeriods(workTime);
-        System.out.println("Sesiones: " + sessions);
+        System.out.println("\r\nSesiones: " + sessions);
         for (int i = 0; i < sessions; i++) {
-            System.out.println("\r\n> Grupos Sesión " + (i+1) + ":\r\n");
-            System.out.println("studentsList pre fn:" + studentsList);
+            System.out.println("\r\n   >Grupos Sesión " + (i+1) + ":\r\n");
+
+            // Clone Students list to control random fn.
+            List <String> studentsNames = new ArrayList<>(cloneDataList(studentsList));
+
             for (int j = 0; j < groupsNumber; j++) {
                 // Take a random element from list and print them
                 List<Integer> params = new ArrayList<>();
                 params.add(membersPerGroup);
-                params.add(extraGroup);
-    
-        		System.out.println("Grupo" + (j+1) + ": " + setGroupsRandomly(studentsList, params));
+                params.add(extraGroup);    
+        		System.out.println("      Grupo" + (j+1) + ": " + setGroupsRandomly(studentsNames, params));
             }
         }
+        System.out.println("\r\n    Éxito y disfruta tu actividad. \r\n" );
+
 	}
-    // TODOcambiar metodo random sin borrar lista o crear otra lista
     // Function Create groups randomly
 	public static List<String>setGroupsRandomly(List<String> list, List<Integer> parameters){
         Random randomNumber = new Random();
         int totalItems = parameters.get(0);
         int extraGroup = parameters.get(1);
-
-        System.out.println("Lista en fn: " + list);
 
         // Create a temporary list for storing selected element
 		List<String> eachGroup = new ArrayList<>();
@@ -106,7 +107,9 @@ public class App {
             list.remove(randomIndex);
             }   
         } else if(extraGroup == 1){
+            
             if(list.size() == 4){
+
                 eachGroup.addAll(list);
                 list.clear();
                 
@@ -121,6 +124,7 @@ public class App {
         
                     // Remove selected element from original list
                     list.remove(randomIndex);
+
                 }
             }          
         } else {
@@ -242,6 +246,12 @@ public class App {
     return sessions;    
     }
 
+
+    public static List<String>  cloneDataList(List <String>  studentsNames){
+
+        return new ArrayList<>(studentsNames);
+
+    }
 
 // Test Data: pedro, laura, javi, paula, camila, luis, leo ,rosa, mf, cala, carla, susy, carlos, sergio, fabi, bea, barb, jose, javier, seba, fabian, laura, paloma, consuelo, jacinta, cami, pablo, jano, joao, valeria, valeska, cecilia, tamy,sofy
 
