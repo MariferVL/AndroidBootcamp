@@ -21,43 +21,42 @@ public class App {
 
 
         // TODO:  Get Nombres==>  requiered, String
-        userData.add(0, "funcion");
+        userData.add(0,  validateData(scanner, "Nombre"));
 
         // TODO:  Get Apellidos==> requiered, String
-        System.out.println("\r\n\t>Apellidos: ");
-        String lastName = scanner.nextLine();
-
+        System.out.print("\r\n\t>Apellidos: ");
+        userData.add(0,  validateData(scanner, "Nombre"));
 
         // TODO:  Get  Edad: <120 años
-        System.out.println("\r\n\t>Edad: ");
+        System.out.print("\r\n\t>Edad: ");
         int age = scanner.nextInt(0);
 
         // TODO:  Get RUT ==> Number < 99.999.999, Int
-        System.out.println("\r\n\t>RUN: ");
+        System.out.print("\r\n\t>RUN: ");
         int run = scanner.nextInt(0);
 
         // TODO:  Get Teléfono: <= 15 char, String
-        System.out.println("\r\n\t>Teléfono: ");
+        System.out.print("\r\n\t>Teléfono: ");
         String phone = scanner.next();
 
         // TODO:  Get  Dirección: <=50 char, String
-        System.out.println("\r\n\t>Dirección: ");
+        System.out.print("\r\n\t>Dirección: ");
         String address = scanner.nextLine();
 
 
         // TODO:  Get  Comuna: requiered, String
-        System.out.println("\r\n\t>Comuna: ");
+        System.out.print("\r\n\t>Comuna: ");
         String city = scanner.nextLine();
 
         // TODO:  Get AFP ==> requiered, String
-        System.out.println("\r\n\t>AFP: ");
+        System.out.print("\r\n\t>AFP: ");
         String afp = scanner.nextLine();
 
 
         // TODO:  Get Sistema de salud ==>  1 (Fonasa) o 2 (Isapre), Menu with int
         System.out.println("\r\n\t>Sistema de Salud: ");
         System.out.println("\r\n\t>> 1-FONASA ");
-        System.out.println("\r\n\t>> 2-ISAPRE ");
+        System.out.print("\r\n\t>> 2-ISAPRE ");
         String healthInsurance = scanner.nextLine();
 
 
@@ -68,18 +67,20 @@ public class App {
     }
 
     
-    public static String validateName(Scanner scanner) {
+    public static String validateData(Scanner scanner, String label) {
         boolean procces = true; 
-        String name = "";
+        String input = "";
         while(procces){
-            System.out.println("\r\n\t>Nombres: ");
-            name = scanner.nextLine();
-            System.out.println("Name length: " + name.length());
-            if(name.length() > 1){
+            System.out.print("\r\n\t>"+ label+ ": ");
+            input = scanner.nextLine();
+            System.out.println("Name length: " + input.length());
+            if(input.length() > 1){
                 procces = false;
             } 
             System.out.println("\r\n\t>> Por favor, escribe tu nombre ");
         }
-        return name;
+        return input;
         }
+
+
 }
