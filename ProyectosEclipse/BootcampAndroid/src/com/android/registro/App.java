@@ -1,24 +1,34 @@
 package com.android.registro;
 
+
 public class App{
+
+	public static void main(String[] args) {
 	
-	// TODO tres perfiles: cliente, profesional y administrativo. 
+		
+	// TODO crear tres perfiles: cliente, profesional y administrativo
+		System.out.println("Ingrese su opción de Perfil:");
+		System.out.println("\r\n    > 1-Cliente");
+		System.out.println("    > 2-Profesional");
+		System.out.println("    > 3-Administrativo\r\n ");
+	// TODO Recuperar data usuario
+		
+		
+		//declarar nombre = valor
+				
+
+//	TODO 	crear variables nombre, fecha de nacimiento y RUN
+//	TODO	Crear perfil
+//	TODO	registrar distintos datos 		
+//	TODO	crear variables Cliente: dirección, teléfono, cantidad de empleados
+//	TODO	crear variables Profesional: años de experiencia, departamento
+ //	TODO	crear variable Administrativo: función, nombre superior
+// TODO solicite una cantidad de usuarios a ingresar
+//	TODO	pida por cada uno de ellos los campos Y tipo a registrar.
+//	TODO	ingresar datos según perfil;
+//	TODO mostrar datos por pantalla.
+//	TODO	El algoritmo concluye .
+
 	
-	
-	// TODO Crear variables usuario: nombre, fecha de nacimiento y RUN. 
-	
-	
-	Por cada perfil se necesita registrar distintos datos específicos:
-		Cliente: dirección, teléfono, cantidad de empleados
-		Profesional: años de experiencia, departamento
-		Administrativo: función, nombre superior
-		Se pide un algoritmo y pieza de código Java que solicite una cantidad de usuarios a ingresar, y que pida por cada uno de ellos los campos que son comunes y el tipo a registrar. Dependiendo del tipo, debe pedir los campos se piden según perfil; una vez ingresados los campos, se deben mostrar por pantalla.
-		El algoritmo concluye una vez que se ha ingresado la cantidad de usuarios indicada inicialmente.
-	//caract ==> atributos
-	
-	
-	// acciones ==> metodo
-	
-	
-	
+	}	
 }
