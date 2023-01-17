@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        List <String> userData = new ArrayList<String>();
+
         // Docs Scanner https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
         Scanner scanner = new Scanner(System.in);
         
@@ -13,9 +18,10 @@ public class App {
 
         System.out.println("\r\nDatos a Ingresar: ");
 
+
+
         // TODO:  Get Nombres==>  requiered, String
-        System.out.println("\r\n\t>Nombres: ");
-        String name = scanner.nextLine();
+        userData.add(0, "funcion");
 
         // TODO:  Get Apellidos==> requiered, String
         System.out.println("\r\n\t>Apellidos: ");
@@ -58,6 +64,22 @@ public class App {
         // TODO: Validate data ==> method
         // TODO: Print error message if neccesary
         // TODO: Print all data in console. 
-    scanner.close();
+        scanner.close();
     }
+
+    
+    public static String validateName(Scanner scanner) {
+        boolean procces = true; 
+        String name = "";
+        while(procces){
+            System.out.println("\r\n\t>Nombres: ");
+            name = scanner.nextLine();
+            System.out.println("Name length: " + name.length());
+            if(name.length() > 1){
+                procces = false;
+            } 
+            System.out.println("\r\n\t>> Por favor, escribe tu nombre ");
+        }
+        return name;
+        }
 }
