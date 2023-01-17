@@ -24,8 +24,7 @@ public class App {
         userData.add(0,  validateData(scanner, "Nombre"));
 
         // TODO:  Get Apellidos==> requiered, String
-        System.out.print("\r\n\t>Apellidos: ");
-        userData.add(0,  validateData(scanner, "Nombre"));
+        userData.add(0,  validateData(scanner, "Apellidos"));
 
         // TODO:  Get  Edad: <120 años
         System.out.print("\r\n\t>Edad: ");
@@ -73,11 +72,12 @@ public class App {
         while(procces){
             System.out.print("\r\n\t>"+ label+ ": ");
             input = scanner.nextLine();
-            System.out.println("Name length: " + input.length());
+            System.out.println("Input length: " + input.length());
             if(input.length() > 1){
                 procces = false;
-            } 
-            System.out.println("\r\n\t>> Por favor, escribe tu nombre ");
+            } else {
+                System.out.println("\r\n\t>> Por favor, escribe tu " + label);
+            }
         }
         return input;
         }
