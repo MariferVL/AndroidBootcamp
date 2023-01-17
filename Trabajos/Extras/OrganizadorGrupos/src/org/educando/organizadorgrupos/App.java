@@ -178,7 +178,7 @@ public class App {
         return eachGroup;
 	}
 
-    // Function get groups organzation base on index and return a list of data
+    // Function get groups organzation based on index and return a list of data
     public static List<Integer>  getGroupsNumber(int totalStudents){
         // Create condition to get  in work teams
         int lastGroup = 0;
