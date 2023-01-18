@@ -5,7 +5,7 @@ public class App{
 
 	public static void main(String[] args) {
 	
-		
+	// intuitivo
 	// TODO crear tres perfiles: cliente, profesional y administrativo
 		System.out.println("Ingrese su opción de Perfil:");
 		System.out.println("\r\n    > 1-Cliente");
