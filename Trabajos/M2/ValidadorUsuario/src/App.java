@@ -19,10 +19,10 @@ public class App {
 
         // Get Nombres==> requiered, String
         // Add data to userData List
-        userData.add(validateData(scanner, "Nombres"));
+        userData.add(validateData(scanner,"s ", "Nombres"));
 
         // Get Apellidos==> requiered, String
-        userData.add(validateData(scanner, "Apellidos"));
+        userData.add(validateData(scanner,"s ", "Apellidos"));
 
         // Get Edad ==> int <120 años
         userData.add(validateMaxNumber(scanner, "Edad", 120));
@@ -40,10 +40,10 @@ public class App {
         userData.add(validateStrLength(scanner, "Dirección", 51));
 
         // Get Comuna: requiered, String
-        userData.add(validateData(scanner, "Comuna"));
+        userData.add(validateData(scanner, " " , "Comuna"));
 
         // Get AFP ==> requiered, String
-        userData.add(validateData(scanner, "AFP"));
+        userData.add(validateData(scanner, " ", "AFP"));
 
         // Get Sistema de salud ==> 1 (Fonasa) o 2 (Isapre), Menu with int
         userData.add(validateMenu(scanner, "Sistema de Salud", "1-FONASA" , "2-ISAPRE " ));
@@ -52,15 +52,15 @@ public class App {
         scanner.close();
 
         // Print  all data in console.
-        System.out.println("\r\nDatos Registrados: ");
-        System.out.print("\r\n\t>Nombre: " + userData.get(0));
-        System.out.print("\r\n\t>Apellido: " + userData.get(1));
-        System.out.print("\r\n\t>Edad: " + userData.get(2));
-        System.out.print("\r\n\t>RUN: " + userData.get(3));
-        System.out.print("\r\n\t>Telefono: " + userData.get(4));
-        System.out.print("\r\n\t>Dirección: " + userData.get(5));
-        System.out.print("\r\n\t>Comuna: " + userData.get(6));
-        System.out.print("\r\n\t>AFP: " + userData.get(7));
+        System.out.println("\r\n  Datos Registrados: ");
+        System.out.println("\t>Nombre: " + userData.get(0));
+        System.out.println("\t>Apellido: " + userData.get(1));
+        System.out.println("\t>Edad: " + userData.get(2));
+        System.out.println("\t>RUN: " + userData.get(3));
+        System.out.println("\t>Telefono: " + userData.get(4));
+        System.out.println("\t>Dirección: " + userData.get(5));
+        System.out.println("\t>Comuna: " + userData.get(6));
+        System.out.println("\t>AFP: " + userData.get(7));
 
         String healthinsurance = "";
         switch (userData.get(8)) {
@@ -71,14 +71,14 @@ public class App {
                 healthinsurance =  "ISAPRE";         
                 break;     
         }
-        System.out.print("\r\n\t>Sistema de Salud: " + healthinsurance); 
+        System.out.println("\t>Sistema de Salud: " + healthinsurance); 
 
         System.out.println("\r\n\t\t¡Gracias por Registrarte! \r\n");
 
     }
 
     // Validate data entry ==> method
-    public static String validateData(Scanner scanner, String label) {
+    public static String validateData(Scanner scanner, String plural, String label) {
         boolean procces = true;
         String input = "";
         while (procces) {
@@ -89,7 +89,7 @@ public class App {
                 procces = false;
             } else {
                 // Print error message if neccesary
-                System.out.println("\r\n\t>> ¡! Por favor, escribe tu " + label);
+                System.out.println("\r\n\t>> ¡! Por favor, escribe tu" +plural + label);
             }
         }
         return input;
@@ -100,9 +100,9 @@ public class App {
         boolean procces = true;
         String input = "";
         while (procces) {
-            System.out.print("\r\n\t>" + label + ": ");
-            System.out.print("\r\n\t>> " + option1);
-            System.out.println("\r\n\t>> " + option2);
+            System.out.println("\r\n\t>" + label + ": ");
+            System.out.println("\t>> " + option1);
+            System.out.println("\t>> " + option2);
 
             input = scanner.nextLine();
             if (input.equals("1")) {
@@ -128,10 +128,11 @@ public class App {
             // last one is number
             input = scanner.nextLine();
             if (input.length() < limit) {
+                //FIXME: replace  "ñ" and "´" 
                 procces = false;
             } else {
                 // Print error message if neccesary
-                System.out.print("\r\n\t>> ¡! Dato extenso: Por favor, ingresa sólo la info necesaria");
+                System.out.println("\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
             }
         }
         return input;
@@ -144,13 +145,14 @@ public class App {
         while (procces) {
             System.out.print("\r\n\t>" + label + ": ");
             inputStr = scanner.nextLine();
+            // FIXME: strings limit error
             int input = Integer.valueOf(inputStr);
 
             if (input < max) {
                 procces = false;
             } else {
                 // Print error message if neccesary
-                System.out.print("\r\n\t>> ¡! Dato extenso: Por favor, ingresa sólo la cantidad de dígitos necesaria");
+                System.out.println("\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
             }
         }
         return inputStr;
