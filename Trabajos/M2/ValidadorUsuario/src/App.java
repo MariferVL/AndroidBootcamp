@@ -9,7 +9,7 @@ public class App {
 
         // Docs Scanner https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
         Scanner scanner = new Scanner(System.in);
-        
+
         // Welcome to program
         System.out.println("\r\n\t\t)*(  Registro de Usuarios  )*(  ");
         // System.out.println("\r\n\t\t<_____ \r\n\t\t\t___> ");
@@ -19,39 +19,39 @@ public class App {
 
         // Get Nombres==> requiered, String
         // Add data to userData List
-        userData.add(validateData(scanner,"s ", "Nombres"));
+        userData.add(validateData(scanner, "s ", "Nombres"));
 
         // Get Apellidos==> requiered, String
-        userData.add(validateData(scanner,"s ", "Apellidos"));
+        userData.add(validateData(scanner, "s ", "Apellidos"));
 
         // Get Edad ==> int <120 años
         userData.add(validateMaxNumber(scanner, "Edad", 120));
 
         // Get RUT ==> int < 99.999.999
-        userData.add(validateMaxNumber(scanner, "RUN (sin puntos ni digito verificador)" , 99999999));
+        userData.add(validateMaxNumber(scanner, "RUN (sin puntos ni digito verificador)", 99999999));
 
-        //  Get Teléfono: <= 15 char, String
+        // Get Teléfono: <= 15 char, String
         // System.out.print("\r\n\t>Teléfono: ");
-        userData.add(validateStrLength(scanner, "Teléfono",16));
+        userData.add(validateStrLength(scanner, "Teléfono", 16));
 
-        //  Get Dirección: <=50 char, String
-        //  input = getCapitalizeCase(validateStrLength(scanner, "Dirección", 51));
+        // Get Dirección: <=50 char, String
+        // input = getCapitalizeCase(validateStrLength(scanner, "Dirección", 51));
         // userData.add(input);
         userData.add(validateStrLength(scanner, "Dirección", 51));
 
         // Get Comuna: requiered, String
-        userData.add(validateData(scanner, " " , "Comuna"));
+        userData.add(validateData(scanner, " ", "Comuna"));
 
         // Get AFP ==> requiered, String
         userData.add(validateData(scanner, " ", "AFP"));
 
         // Get Sistema de salud ==> 1 (Fonasa) o 2 (Isapre), Menu with int
-        userData.add(validateMenu(scanner, "Sistema de Salud", "1-FONASA" , "2-ISAPRE " ));
+        userData.add(validateMenu(scanner, "Sistema de Salud", "1-FONASA", "2-ISAPRE "));
 
         // Close obj scanner
         scanner.close();
 
-        // Print  all data in console.
+        // Print all data in console.
         System.out.println("\r\n  Datos Registrados: ");
         System.out.println("\t>Nombre: " + userData.get(0));
         System.out.println("\t>Apellido: " + userData.get(1));
@@ -65,13 +65,13 @@ public class App {
         String healthinsurance = "";
         switch (userData.get(8)) {
             case "1":
-                healthinsurance =  "FONASA";          
+                healthinsurance = "FONASA";
                 break;
             case "2":
-                healthinsurance =  "ISAPRE";         
-                break;     
+                healthinsurance = "ISAPRE";
+                break;
         }
-        System.out.println("\t>Sistema de Salud: " + healthinsurance); 
+        System.out.println("\t>Sistema de Salud: " + healthinsurance);
 
         System.out.println("\r\n\t\t¡Gracias por Registrarte! \r\n");
 
@@ -89,7 +89,7 @@ public class App {
                 procces = false;
             } else {
                 // Print error message if neccesary
-                System.out.println("\r\n\t>> ¡! Por favor, escribe tu" +plural + label);
+                System.out.println("\r\n\t>> ¡! Por favor, escribe tu" + plural + label);
             }
         }
         return input;
@@ -128,11 +128,12 @@ public class App {
             // last one is number
             input = scanner.nextLine();
             if (input.length() < limit) {
-                //FIXME: replace  "ñ" and "´" 
+                // FIXME: replace "ñ" and "´"
                 procces = false;
             } else {
                 // Print error message if neccesary
-                System.out.println("\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
+                System.out.println(
+                        "\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
             }
         }
         return input;
@@ -152,7 +153,8 @@ public class App {
                 procces = false;
             } else {
                 // Print error message if neccesary
-                System.out.println("\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
+                System.out.println(
+                        "\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
             }
         }
         return inputStr;
