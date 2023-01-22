@@ -23,7 +23,6 @@ class RegistroPerfiles {
         for (int i = 0; i < usersNum; i++) {
             userData.add(validateMenu(scanner, "Perfiles", "1- Cliente", "2- Profesional", "3- Administrativo"));
         }
-        System.out.println("Main list: " + userData);
 
         scanner.close();
 
@@ -57,10 +56,7 @@ class RegistroPerfiles {
                 System.out.println("\t>>Cargo/Rol: " +  userData.get(i).get(4));
                 System.out.println("\t>>Nombre del Supervisor: " +  userData.get(i).get(5));
 
-            } else {
-                // Print error message if neccesary
-                System.out.print("\r\n\t>> ¡! Esto es ABSOLUTAMENTE imposible y ocurrió :o");
-            }
+            } 
 
         }
 
@@ -176,9 +172,7 @@ class RegistroPerfiles {
                         "\r\n\t>> ¡! Dato extenso: Por favor, ingresa\r\n\t  sólo la cantidad de dígitos necesaria");
             }
         }
-
         return inputStr;
-
     }
 
     // Validate number min on int inputs
