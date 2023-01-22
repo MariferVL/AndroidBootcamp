@@ -7,18 +7,17 @@ public class App {
         // Create a list to save all user data
         List<String> userData = new ArrayList<String>();
 
-        // Docs Scanner https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
+        // Create a Scanner class obj
         Scanner scanner = new Scanner(System.in);
 
         // Welcome to program
         System.out.println("\r\n\t\t)*(  Registro de Usuarios  )*(  ");
-        // System.out.println("\r\n\t\t<_____ \r\n\t\t\t___> ");
 
         // Get data from inputs and Create variables
         System.out.println("\r\nDatos a Ingresar: ");
 
+    // Add data to userData List
         // Get Nombres==> requiered, String
-        // Add data to userData List
         userData.add(validateData(scanner, "s ", "Nombres"));
 
         // Get Apellidos==> requiered, String
@@ -31,12 +30,9 @@ public class App {
         userData.add(validateMaxNumber(scanner, "RUN (sin puntos ni digito verificador)", 99999999));
 
         // Get Teléfono: <= 15 char, String
-        // System.out.print("\r\n\t>Teléfono: ");
         userData.add(validateStrLength(scanner, "Teléfono", 16));
 
         // Get Dirección: <=50 char, String
-        // input = getCapitalizeCase(validateStrLength(scanner, "Dirección", 51));
-        // userData.add(input);
         userData.add(validateStrLength(scanner, "Dirección", 51));
 
         // Get Comuna: requiered, String
@@ -45,7 +41,7 @@ public class App {
         // Get AFP ==> requiered, String
         userData.add(validateData(scanner, " ", "AFP"));
 
-        // Get Sistema de salud ==> 1 (Fonasa) o 2 (Isapre), Menu with int
+        // Get Health Insurance ==> 1 (Fonasa) o 2 (Isapre), Menu with int
         userData.add(validateMenu(scanner, "Sistema de Salud", "1-FONASA", "2-ISAPRE "));
 
         // Close obj scanner
@@ -92,6 +88,7 @@ public class App {
                 System.out.println("\r\n\t>> ¡! Por favor, escribe tu" + plural + label);
             }
         }
+        // return method result
         return input;
     }
 
@@ -124,11 +121,10 @@ public class App {
         while (procces) {
             // Use print to enable writing after the tag
             System.out.print("\r\n\t>" + label + ": ");
-            // https://stackoverflow.com/questions/13102045/scanner-is-skipping-nextline-after-using-next-or-nextfoo
             // last one is number
             input = scanner.nextLine();
             if (input.length() < limit) {
-                // FIXME: replace "ñ" and "´"
+                // FIXME: Next improvement ==> replace "ñ" and "´"  
                 procces = false;
             } else {
                 // Print error message if neccesary
@@ -146,7 +142,7 @@ public class App {
         while (procces) {
             System.out.print("\r\n\t>" + label + ": ");
             inputStr = scanner.nextLine();
-            // FIXME: strings limit error
+            // FIXME: Next improvement ==> strings limit error
             int input = Integer.valueOf(inputStr);
 
             if (input < max) {
