@@ -79,6 +79,7 @@ public class App {
         String input = "";
         while (procces) {
             System.out.print("\r\n\t>" + label + ": ");
+            // get user answer
             input = scanner.nextLine();
             if (input.length() > 1) {
                 input = getCapitalizeCase(input);
@@ -100,6 +101,7 @@ public class App {
             System.out.println("\r\n\t>" + label + ": ");
             System.out.println("\t>> " + option1);
             System.out.println("\t>> " + option2);
+            System.out.print("\t>> Opción: ");
 
             input = scanner.nextLine();
             if (input.equals("1")) {
