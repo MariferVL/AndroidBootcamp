@@ -21,7 +21,7 @@ public class Calculator {
         double total = calculate(scanner, "Operación a realizar", "1- Suma (+)", 
         "2- Resta (-)", "3- Multiplicación (x)", "4- División (:)", "5- Resíduo/Módulo (/)");
 
-        System.out.println("\t>Total: " + total);
+        System.out.println("\t>Total: " + total + "\r\n");
 
         scanner.close();
 
@@ -32,6 +32,7 @@ public class Calculator {
     public static double calculate(Scanner scanner, String label, String option1,String option2, String option3, String option4, String option5) {
 
         boolean procces = true;
+        String input = "";
         String mathOperator = "";
         int number1 = 0;
         int number2 = 0;
@@ -45,39 +46,44 @@ public class Calculator {
             System.out.println("\t>> " + option4);
             System.out.println("\t>> " + option5);
             System.out.print("\t>> Opción: ");
-            mathOperator = scanner.nextLine();
+            input = scanner.nextLine();
 
             number1 = getNumber(scanner, "Primer Número");
             number2 = getNumber(scanner, "Segundo Número");
 
-            switch (mathOperator) {
+            switch (input) {
                 case "1":
                     total = number1 + number2;
+                    mathOperator =" + ";
                     procces = false;
                     break;
                 case "2":
                     total = number1 - number2;
+                    mathOperator =" - ";
                     procces = false;
                     break;
                 case "3":
                     total = number1 * number2;
+                    mathOperator =" x ";
                     procces = false;
                     break;
                 case "4":
                     total = number1 / number2;
+                    mathOperator =" : ";
                     procces = false;
                     break;
                 case "5":
                     total = number1 % number2;
+                    mathOperator =" / ";
                     procces = false;
                     break;
                 default:
                     // Print error message if neccesary
-                    System.out.print("\r\n\t>> ¡! La opción " + mathOperator + " no es válida.");
+                    System.out.print("\r\n\t>> ¡! La opción " + input + " no es válida.");
                     break;
                 }
             }        
-            System.out.println("\t> " + number1 + " "  + mathOperator + " "  + number2 );
+            System.out.println("\t> " + number1+ mathOperator + number2 );
             return total;
             
         }
