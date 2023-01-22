@@ -78,6 +78,7 @@ public class App {
         boolean procces = true;
         String input = "";
         while (procces) {
+            // Use print to enable writing after the tag
             System.out.print("\r\n\t>" + label + ": ");
             // get user answer
             input = scanner.nextLine();
