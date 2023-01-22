@@ -1,4 +1,4 @@
-package com.android.module2;
+package com.android.module2.regulationscontrol;
 
 import java.util.Scanner;
 

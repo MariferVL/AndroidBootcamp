@@ -1,4 +1,4 @@
-package com.android.module2;
+package com.android.module2.truevalidation;
 
 public class ValidacionVerdad {
     public static void main(String[] args) {

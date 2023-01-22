@@ -21,7 +21,7 @@ public class Main {
 	 */
  // Function get groups organzation base on index and return a list of data
  public static List<Integer>  getGroupsNumber(int totalStudents){
-     //TODO Create condition to get  in work teams
+     // Create condition to get  in work teams
      int lastGroup = 0;
      int membersPerGroup;
      int groupsNumber;
@@ -71,7 +71,7 @@ public class Main {
  
  // Drive Function
 	public static void main(String[] args) {
-		// TODO Create Vars: concentration time min, max, and group swapping.
+		//  Create Vars: concentration time min, max, and group swapping.
      final int longFocusTime = 26;
      final int restChange = 5;
      final int shortFocusTime = 10;
@@ -79,17 +79,17 @@ public class Main {
 
      String groups;
      
-     // TODO Create input with students names 
+     //  Create input with students names 
 		System.out.println("Ingresa nombres de estudiantes separado por coma: ");
 		String students = System.console().readLine();
      //System.out.print("Los estudiantes ingresados: " + students);
      
-     // TODO Create input with total working time
+     //  Create input with total working time
      System.out.println("Ingresa total de minutos de sesión : ");
 		int workTime = Integer.parseInt(System.console().readLine());
 		//System.out.println("Minutos totales a trabajar: " + workTime);
 
-     // TODO Confirm students list and total number.
+     //  Confirm students list and total number.
      System.out.println("\r\nPor favor, confirma la información ingresada: \r\n");
      AbstractList<String> studentsList = new LinkedList<String>();
      // Split string from comma
@@ -216,7 +216,7 @@ public class Main {
 	}
 
 
-	//TODO  chequear valores línea 57 y 104 
+	//  chequear valores línea 57 y 104 
 	//Condición más de 30 min--> Pomodoro
 	//< 30 min --> 10 min + 2 
 

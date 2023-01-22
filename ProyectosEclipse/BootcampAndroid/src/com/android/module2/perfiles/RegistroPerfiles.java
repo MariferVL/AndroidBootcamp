@@ -1,4 +1,4 @@
-package com.android.module2;
+package com.android.module2.perfiles;
 
 import java.util.ArrayList;
 import java.util.List;
