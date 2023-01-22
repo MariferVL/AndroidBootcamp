@@ -12,7 +12,9 @@ public class ValidacionVerdad {
         // c) V3 = ((2 * 3 + 5 -7) > (2 * (2 + 5)) O ((10 – 5) < 20)
         // V3 = true
 
-        if ("A" > "B" || ("Hola mundo").length() == 10) {
+        int A = 1;
+        int B = 2;
+        if (A > B || ("Hola mundo").length() == 10) {
         System.out.println("\r\n V1 es verdadero.");
         } else {
         System.out.println("\r\n V1 es falso.");
@@ -20,15 +22,10 @@ public class ValidacionVerdad {
 
         if (!((5 + 2) < 7) && !((7 > 9) || (3 < 5) && (4 == 3))) {
             System.out.println("\r\n   V2 es verdadero.");
-        } else {
-            System.out.println("\r\n   V2 es falso.");
-        }
+        } 
 
         if ((2 * 3 + 5 - 7) > (2 * (2 + 5)) || ((10 - 5) < 20)) {
             System.out.println("\r\n   V3 es verdadero.");
-        } else {
-            System.out.println("\r\n   V3 es falso.");
-        }
-    }
-
+        } 
+    }    
 }
