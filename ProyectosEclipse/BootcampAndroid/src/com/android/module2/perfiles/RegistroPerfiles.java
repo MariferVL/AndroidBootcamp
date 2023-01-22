@@ -12,7 +12,6 @@ class RegistroPerfiles {
 
         // Welcome to program
         System.out.println("\r\n\t\t |/|  Registro de Usuarios  |\\|  ");
-        // System.out.println("\r\n\t\t<_____ \r\n\t\t\t___> ");
 
         // Get users number data
         System.out.print("\r\nIngrese cantidad de usuarios: ");
