@@ -1,7 +1,6 @@
 package com.android.module2.stringprinting;
 
 import java.util.Scanner;
-import java.io.*;
 
 
 public class StringPrinting {
