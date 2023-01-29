@@ -349,7 +349,7 @@ public class Manager {
         //  FIXME: double checking
         if (usersNum > 0) {
             for (int i = 0; i < usersNum; i++) {
-                System.out.println("  > Usuario " + (i + 1) + ": ");
+                System.out.println("\r\n  > Usuario " + (i + 1) + ": ");
 
                 // Filter profile data
                 for (int j = 0; j < data.get(i).size(); j++) {
@@ -437,7 +437,7 @@ public class Manager {
         System.out.println("\r\n\t\t >> Clientes: " + customers);
         System.out.println("\r\n\t\t >> Profesionales: " + professionals);
         System.out.println("\r\n\t\t >> Administrativos: " + managers);
-        System.out.println("\r\n\t\t ** Fin de despliegue **  ");
+        System.out.println("\r\n\t\t **  Fin de despliegue  **  ");
     }
 
     /*Indicaciones:
@@ -455,7 +455,6 @@ public class Manager {
         // iterate through arraylist
         for (int i = 0; i < userData.size(); i++) {
             if (userData.get(i).get(3).equals(run)) {
-                System.out.println("List of user: " + userData.get(i));
                 while (process) {
                     if (userData.get(i).get(4).equals("Cliente")) {
                         option = displayMenu(scanner, 7, "Escoge dato a cambiar.", "\t>> 1-Nombre",
@@ -505,7 +504,7 @@ public class Manager {
                         userData.get(i).set(6, validateData(scanner, 2, "Nombre del Supervisor", -1, 20));
                     }
 
-                    System.out.println("\r\n\t\t **   Datos Actualizados  **  ");
+                    System.out.println("\r\n\t\t **  Datos Actualizados  **  ");
 
                     // Choose next step
                     String next = displayMenu(scanner, 3, "Escoge opción:", "\t>> 1-Actualizar otro dato",
@@ -514,7 +513,7 @@ public class Manager {
                         displayMainMenu(scanner);
                         process = false;
                     } else if (next.equals("3")) {
-                        System.out.println("\r\n\t\t **   Gracias por usar Regístrate   ** ");
+                        System.out.println("\r\n\t\t **  Gracias por usar Regístrate  ** ");
                         System.exit(0);
                     }
                 }
