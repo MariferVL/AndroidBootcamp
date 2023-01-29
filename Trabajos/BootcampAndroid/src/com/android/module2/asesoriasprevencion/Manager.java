@@ -87,7 +87,7 @@ public class Manager {
                     break;
                 case 6:
                     // Exit program.
-                    System.out.println("\r\n\t\t Gracias por usar Regístrate ");
+                    System.out.println("\r\n\t\t **  Gracias por usar Regístrate  **");
                     System.exit(0);
                     break;
             }
@@ -141,7 +141,7 @@ public class Manager {
             userData.add(input);
 
         }
-        System.out.print("\r\n\t\t>> ** Usuario Registrado **\r\n");
+        System.out.print("\r\n\t\t>> **  Usuario Registrado  **\r\n");
 
         return userData;
     }
@@ -402,10 +402,10 @@ public class Manager {
                     }
                 }
             }
-            System.out.println("\r\n\t\t ** Fin de despliegue **  ");
+            System.out.println("\r\n\t\t **  Fin de despliegue  ** \r\n ");
 
         } else {
-            System.out.println("\r\n\t\tAún no hay Usuarios Registrados. \r\n");
+            System.out.println("\r\n\t\t¡! Sin Usuarios Registrados. \r\n");
         }
     }
 
@@ -455,6 +455,7 @@ public class Manager {
         // iterate through arraylist
         for (int i = 0; i < userData.size(); i++) {
             if (userData.get(i).get(3).equals(run)) {
+                System.out.println("List of user: " + userData.get(i));
                 while (process) {
                     if (userData.get(i).get(4).equals("Cliente")) {
                         option = displayMenu(scanner, 7, "Escoge dato a cambiar.", "\t>> 1-Nombre",
@@ -472,36 +473,36 @@ public class Manager {
                     }
                     switch (option) {
                         case "1":
-                            userData.get(i).add(0, validateData(scanner, 1,  "Nombre", 1, 22));
+                            userData.get(i).set(0, validateData(scanner, 1,  "Nombre", 1, 22));
                             break;
                         case "2":
-                            userData.get(i).add(1, validateData(scanner, 1, "Apellido", -1, 22));
+                            userData.get(i).set(1, validateData(scanner, 1, "Apellido", -1, 22));
                             break;
                         case "3":
-                            userData.get(i).add(2, validateDate(scanner, "Fecha de Nacimiento (dd/mm/aaaa)"));
+                            userData.get(i).set(2, validateDate(scanner, "Fecha de Nacimiento (dd/mm/aaaa)"));
                             break;
                         case "4":
-                            userData.get(i).add(3, validateNumber(scanner, 1,  "RUN (sin puntos ni digito verificador)",
+                            userData.get(i).set(3, validateNumber(scanner, 1,  "RUN (sin puntos ni digito verificador)",
                                     1111111, 99999999));
                             break;
                         // TODO: Add profile option
                         case "7":
-                            userData.get(i).add(7, validateNumber(scanner, 2, "Cantidad de Empleados", -1, 10000000));
+                            userData.get(i).set(7, validateNumber(scanner, 2, "Cantidad de Empleados", -1, 10000000));
 
                     }
-
-                    if (userData.get(i).get(4).equals("Cliente") && option.equals("5")) {
-                        userData.get(i).add(5, validateData(scanner, 1, "Dirección", 5, 50));
-                    } else if (userData.get(i).get(4).equals("Cliente") && option.equals("6")) {
-                        userData.get(i).add(6, validateData(scanner, 1, "Teléfono", 9, 16));
-                    } else if (userData.get(i).get(4).equals("Profesional") && option.equals("5")) {
-                        userData.get(i).add(5, validateNumber(scanner, 2, "Años de Experiencia", -1, 100));
-                    } else if (userData.get(i).get(4).equals("Profesional") && option.equals("6")) {
-                        userData.get(i).add(6, validateData(scanner, 1, "Departamento de Compañía", -1, 20));
-                    } else if (userData.get(i).get(4).equals("Administrativo") && option.equals("5")) {
-                        userData.get(i).add(5, validateData(scanner, 1, "Cargo/Rol", 2, 20));
-                    } else if (userData.get(i).get(4).equals("Administrativo") && option.equals("6")) {
-                        userData.get(i).add(6, validateData(scanner, 2, "Nombre del Supervisor", -1, 20));
+                    String userProfile = userData.get(i).get(4);
+                    if (userProfile.equals("Cliente") && option.equals("5")) {
+                        userData.get(i).set(5, validateData(scanner, 1, "Dirección", 5, 50));
+                    } else if (userProfile.equals("Cliente") && option.equals("6")) {
+                        userData.get(i).set(6, validateData(scanner, 1, "Teléfono", 9, 16));
+                    } else if (userProfile.equals("Profesional") && option.equals("5")) {
+                        userData.get(i).set(5, validateNumber(scanner, 2, "Años de Experiencia", -1, 100));
+                    } else if (userProfile.equals("Profesional") && option.equals("6")) {
+                        userData.get(i).set(6, validateData(scanner, 1, "Departamento de Compañía", -1, 20));
+                    } else if (userProfile.equals("Administrativo") && option.equals("5")) {
+                        userData.get(i).set(5, validateData(scanner, 1, "Cargo/Rol", 2, 20));
+                    } else if (userProfile.equals("Administrativo") && option.equals("6")) {
+                        userData.get(i).set(6, validateData(scanner, 2, "Nombre del Supervisor", -1, 20));
                     }
 
                     System.out.println("\r\n\t\t **   Datos Actualizados  **  ");
@@ -513,12 +514,12 @@ public class Manager {
                         displayMainMenu(scanner);
                         process = false;
                     } else if (next.equals("3")) {
-                        System.out.println("\r\n\t\t **  Gracias por usar Regístrate  ** ");
+                        System.out.println("\r\n\t\t **   Gracias por usar Regístrate   ** ");
                         System.exit(0);
                     }
                 }
             } else {
-                System.out.println("\r\n\t\t ¡! No tenemos usuarios registrados con ese RUN. ");
+                System.out.println("\r\n\t\t ¡! No tenemos usuarios \r\nregistrados con ese RUN. ");
             }
         }
     }
@@ -526,7 +527,7 @@ public class Manager {
     // Display local menu
     public static String displayMenu(Scanner scanner, int options, String label, String option1, String option2,
             String option3, String option4, String option5, String option6, String option7) {
-        System.out.println("\r\n\t\t |/| Menú  |\\|  ");
+        System.out.println("\r\n\t |/|  Menú  |\\|  ");
         String answer = "";
         boolean process = true;
 
@@ -567,7 +568,7 @@ public class Manager {
     recibir un RUT, y eliminar usuario desde el arreglo. */
     // Delete user acording to their RUN
     public static void deleteUser(Scanner scanner) {
-        System.out.println("\r\n\t\t |/| Eliminación de Usuarios  |\\|  ");
+        System.out.println("\r\n\t\t |/|  Eliminación de Usuarios  |\\|  ");
         String run = validateNumber(scanner, 1, "RUN (sin puntos ni digito verificador)", 1111111, 99999999);
         for (int i = 0; i < userData.size(); i++) {
             if (userData.get(i).get(3).equals(run)) {
@@ -589,7 +590,7 @@ public class Manager {
     // Display Main Menu in Console
      public static int displayMainMenu(Scanner scanner) {
 
-        System.out.println("\r\n\t\tMenú Principal");
+        System.out.println("\r\n\t |/|  Menú Principal  |\\|");
         String answer = "";
         boolean process = true;
         int answertoInt = 0;
