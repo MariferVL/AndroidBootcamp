@@ -320,7 +320,7 @@ public class Manager {
             System.out.print("\r\n\t>" + label + ": ");
             input = scanner.nextLine();
             if (input.length() > 0) {
-                if (input.matches("^((0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])/(19|2[0-9])[0-9]{2})$")) {
+                if (input.matches("^((0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|2[0-9])[0-9]{2})$")) {
                     process = false;
                 } else {
                     System.out.println(
