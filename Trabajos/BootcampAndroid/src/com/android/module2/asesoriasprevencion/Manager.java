@@ -36,7 +36,7 @@ public class Manager {
         Scanner scanner = new Scanner(System.in);
 
         // Welcome to program
-        System.out.println("\r\n\t\t |/|  ¡Bienvenido a Regístrate!  |\\|  ");
+        System.out.println("\r\n\t\t |/| ¡Bienvenido a Regístrate! |\\|  ");
 
         /*Saved: Get users number data
          * System.out.print("\r\nIngrese cantidad de usuarios: ");
@@ -344,7 +344,7 @@ public class Manager {
         int usersNum = data.size();
 
         // Print all data collected
-        System.out.println("\r\n\t\t |/| Datos Registrados  |\\|  ");
+        System.out.println("\r\n\t\t |/| Datos Registrados |\\|  ");
         System.out.println("\r\n  > Total Usuarios Registrados: " + usersNum);
         //  FIXME: double checking
         if (usersNum > 0) {
@@ -433,7 +433,7 @@ public class Manager {
             }
         }
 
-        System.out.println("\r\n\t\t |/| Contabilización Usuarios  |\\|  ");
+        System.out.println("\r\n\t\t |/| Contabilización Usuarios |\\|  ");
         System.out.println("\r\n\t\t >> Clientes: " + customers);
         System.out.println("\r\n\t\t >> Profesionales: " + professionals);
         System.out.println("\r\n\t\t >> Administrativos: " + managers);
@@ -447,7 +447,7 @@ public class Manager {
      */
     // Update user info acording to their RUN and Profile
     public static void updateData(Scanner scanner) {
-        System.out.println("\r\n\t\t |/| Actualización de Datos  |\\|  ");
+        System.out.println("\r\n\t\t |/| Actualización de Datos |\\|  ");
         String run = validateNumber(scanner, 1, "RUN (sin puntos ni digito verificador)", 1111111, 99999999);
         String option = "";
         boolean process = true;
@@ -527,7 +527,7 @@ public class Manager {
     // Display local menu
     public static String displayMenu(Scanner scanner, int options, String label, String option1, String option2,
             String option3, String option4, String option5, String option6, String option7) {
-        System.out.println("\r\n\t |/|  Menú  |\\|  ");
+        System.out.println("\r\n\t |/| Menú |\\|  ");
         String answer = "";
         boolean process = true;
 
@@ -568,7 +568,7 @@ public class Manager {
     recibir un RUT, y eliminar usuario desde el arreglo. */
     // Delete user acording to their RUN
     public static void deleteUser(Scanner scanner) {
-        System.out.println("\r\n\t\t |/|  Eliminación de Usuarios  |\\|  ");
+        System.out.println("\r\n\t\t |/| Eliminación de Usuarios |\\|  ");
         String run = validateNumber(scanner, 1, "RUN (sin puntos ni digito verificador)", 1111111, 99999999);
         for (int i = 0; i < userData.size(); i++) {
             if (userData.get(i).get(3).equals(run)) {
@@ -590,7 +590,7 @@ public class Manager {
     // Display Main Menu in Console
      public static int displayMainMenu(Scanner scanner) {
 
-        System.out.println("\r\n\t |/|  Menú Principal  |\\|");
+        System.out.println("\r\n\t |/| Menú Principal |\\|");
         String answer = "";
         boolean process = true;
         int answertoInt = 0;
