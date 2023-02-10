@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\mfvl1\AndroidBootcamp\Trabajos\BootcampAndroid\.metadata\.plugins\org.eclipse.jdt.core
+1057189312.index
+1865797976.index
+312100907.index
